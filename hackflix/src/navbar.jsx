@@ -5,21 +5,23 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 
 function Barra() {
   return (
-    <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+    <div className="fondo">
+      <Navbar expand="lg" className="">
         <Container>
-          <Navbar.Brand href="#home">Hackflix</Navbar.Brand>
+          <Navbar.Brand className="element" href="#home">
+            Hackflix
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
-              <Nav.Link className="" href="#home">
+              <Nav.Link className="element" href="#home">
                 Home
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="text-center mt-4">
+      <div className="titulo">
         <h1>¡Tus películas favoritas!</h1>
         <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
       </div>

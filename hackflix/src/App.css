@@ -1,1 +1,21 @@
+.titulo {
+  text-align: center;
+  color: #ffffff;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
 
+.fondo {
+  background-image: url(/img/imagen-pelicula.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 400px;
+}
+.element {
+  font-weight: bold;
+  color: #ffffff;
+}
