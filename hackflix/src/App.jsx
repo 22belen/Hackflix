@@ -8,13 +8,14 @@ import { Container, Row, Col } from "react-bootstrap";
 function App() {
   const [rating, setRating] = useState(0);
 
-  const handleRating = (rate) => {
+  function handleRating(rate) {
     setRating(rate);
-  };
+  }
 
-  const handleReset = () => {
+  function handleReset() {
     setRating(0);
-  };
+  }
+
   return (
     <>
       <Barra />
