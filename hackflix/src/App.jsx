@@ -9,24 +9,28 @@ function App() {
   const [rating, setRating] = useState(0);
 
   function handleRating(rate) {
-    setRating(rate);
+    const realRating = rate * 2;
+    setRating(realRating);
   }
 
   function handleReset() {
     setRating(0);
   }
 
+  const filteredMovies = movies.filter((movie) => movie.vote_average >= rating);
+
   return (
     <>
       <Barra />
       <div className="contenedor rating">
         <h4>Calificá este producto:</h4>
-        <Rating onClick={handleRating} initialValue={rating} />
+        <Rating onClick={handleRating} initialValue={(rating / 10) * 5} />
         <button onClick={handleReset}>reset</button>
+        <p>Puntaje seleccionado: {rating}</p>
       </div>
       <Container>
         <Row>
-          {movies.map((movie) => (
+          {filteredMovies.map((movie) => (
             <Col md={4} key={movie.id}>
               <div className="movie-card">
                 <img
