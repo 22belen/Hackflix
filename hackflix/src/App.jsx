@@ -1,12 +1,25 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Barra from "./componentes/Barra";
 import { Rating } from "react-simple-star-rating";
-import movies from "./db/movies.json";
 import { Container, Row, Col } from "react-bootstrap";
+import axios from "axios";
 
 function App() {
   const [rating, setRating] = useState(0);
+  const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    const getMovies = async () => {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/movie/popular?api_key=2cb2d43409108d6f09870f3c3c531b0c&page=${page}`
+      );
+      setMovies(response.data.results);
+      console.log(response);
+    };
+    getMovies();
+  }, []);
 
   function handleRating(rate) {
     const realRating = rate * 2;
@@ -34,7 +47,7 @@ function App() {
             <Col md={4} key={movie.id}>
               <div className="movie-card">
                 <img
-                  src={movie.poster_path}
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                   alt={movie.title}
                   className="poster"
                 />
