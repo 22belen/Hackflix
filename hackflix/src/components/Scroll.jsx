@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { Rating } from "react-simple-star-rating";
 
 function Scroll() {
@@ -9,6 +9,7 @@ function Scroll() {
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [rating, setRating] = useState(0);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   function handleRating(rate) {
     const realRating = rate * 2;
@@ -32,10 +33,7 @@ function Scroll() {
         return [...prevMovies, ...uniqueMovies];
       });
 
-      if (newMovies.length === 0) {
-        setHasMore(false);
-      }
-
+      if (newMovies.length === 0) setHasMore(false);
       setPage((prevPage) => prevPage + 1);
     } catch (error) {
       console.log("Ocurrió un error al cargar las películas", error);
@@ -48,29 +46,51 @@ function Scroll() {
 
   const filteredMovies = movies.filter((movie) => movie.vote_average >= rating);
 
+  const handleShow = (movie) => setSelectedMovie(movie);
+  const handleClose = () => setSelectedMovie(null);
+
   return (
     <div>
-      <div className="contenedor rating mt-4">
+      <div className="contenedor rating mt-4 text-center">
         <Rating onClick={handleRating} initialValue={(rating / 10) * 5} />
-        <button onClick={handleReset}>reset</button>
-        <p>Puntaje seleccionado: {rating}</p>
+        <button className="btn btn-warning ms-2 p-1" onClick={handleReset}>
+          Reset
+        </button>
+        <p className="mt-1 puntaje  ">
+          {" "}
+          <small className="me-5 estrellas">
+            {" "}
+            <strong>{rating} Estrellas</strong>{" "}
+          </small>
+        </p>
       </div>
+
       <InfiniteScroll
         dataLength={filteredMovies.length}
         next={getMovies}
         hasMore={hasMore}
-        loader={<h4>Cargando más películas...</h4>}
-        endMessage={<p>No hay más películas para mostrar</p>}
+        loader={<h4 className="text-center mt-3">Cargando más películas...</h4>}
+        endMessage={<p className="text-center">No hay más películas</p>}
       >
         <Container>
           <Row>
             {filteredMovies.map((movie) => (
-              <Col md={4} key={movie.id}>
-                <div className="movie-card mt-4">
+              <Col
+                md={3}
+                sm={6}
+                xs={12}
+                key={movie.id}
+                className="mb-4 d-flex justify-content-center"
+              >
+                <div
+                  className="movie-card mt-3"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => handleShow(movie)}
+                >
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                     alt={movie.title}
-                    className="poster"
+                    className="img-fluid rounded shadow-sm"
                   />
                 </div>
               </Col>
@@ -78,6 +98,34 @@ function Scroll() {
           </Row>
         </Container>
       </InfiniteScroll>
+
+      <Modal show={!!selectedMovie} onHide={handleClose} centered>
+        {selectedMovie && (
+          <>
+            <Modal.Header closeButton className="info">
+              <Modal.Title>{selectedMovie.title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              <p className="info">
+                <strong>Fecha de publicación:</strong>{" "}
+                {selectedMovie.release_date}
+              </p>
+              <p className="info">
+                <strong>Resumen:</strong>{" "}
+                {selectedMovie.overview || "No hay resumen disponible."}
+              </p>
+              <p className="info">
+                <strong>Rating:</strong> {selectedMovie.vote_average}
+              </p>
+            </Modal.Body>
+            <Modal.Footer>
+              <Button variant="warning" onClick={handleClose}>
+                Cerrar
+              </Button>
+            </Modal.Footer>
+          </>
+        )}
+      </Modal>
     </div>
   );
 }

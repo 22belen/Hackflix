@@ -1,11 +1,15 @@
+body {
+  background-color: black;
+}
+
 .titulo {
   text-align: center;
-  color: #ffffff;
+  color: #000000;
   font-size: 3rem;
   font-weight: 900;
   letter-spacing: 2px;
   margin-bottom: 10px;
-  margin-top: 100px;
+  margin-top: 400px;
 }
 
 .fondo {
@@ -13,7 +17,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 400px;
+  height: 600px;
 }
 .element {
   font-weight: bold;
@@ -39,4 +43,18 @@
 
 .movie-card img:hover {
   transform: scale(1.08);
+}
+.puntaje {
+  color: rgb(255, 255, 255);
+}
+.modal-content {
+  background-color: #303030;
+  color: #fff;
+}
+
+.modal-title {
+  color: #fff;
+}
+.estrellas {
+  color: gold;
 }
