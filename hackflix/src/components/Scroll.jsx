@@ -72,7 +72,6 @@ function Scroll() {
                     alt={movie.title}
                     className="poster"
                   />
-                  <h5 className="nombre">{movie.title}</h5>
                 </div>
               </Col>
             ))}
