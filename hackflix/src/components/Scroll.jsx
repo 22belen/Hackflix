@@ -50,8 +50,7 @@ function Scroll() {
 
   return (
     <div>
-      <div className="contenedor rating">
-        <h4>Calificá este producto:</h4>
+      <div className="contenedor rating mt-4">
         <Rating onClick={handleRating} initialValue={(rating / 10) * 5} />
         <button onClick={handleReset}>reset</button>
         <p>Puntaje seleccionado: {rating}</p>
@@ -67,7 +66,7 @@ function Scroll() {
           <Row>
             {filteredMovies.map((movie) => (
               <Col md={4} key={movie.id}>
-                <div className="movie-card">
+                <div className="movie-card mt-4">
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                     alt={movie.title}

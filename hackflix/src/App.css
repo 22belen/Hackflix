@@ -33,3 +33,10 @@
   margin-top: 10px;
   margin-bottom: 20px;
 }
+.movie-card img {
+  transition: transform 0.3s ease;
+}
+
+.movie-card img:hover {
+  transform: scale(1.08);
+}
