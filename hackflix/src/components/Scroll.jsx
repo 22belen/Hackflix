@@ -51,7 +51,7 @@ function Scroll() {
 
   return (
     <div>
-      <div className="contenedor rating mt-4 text-center">
+      <div className="contenedor rating  text-center stars">
         <Rating onClick={handleRating} initialValue={(rating / 10) * 5} />
         <button className="btn btn-warning ms-2 p-1" onClick={handleReset}>
           Reset
@@ -64,12 +64,16 @@ function Scroll() {
           </small>
         </p>
       </div>
-
+      <h3 className="container recomendaciones ">TUS PELICULAS FAVORITAS</h3>
       <InfiniteScroll
         dataLength={filteredMovies.length}
         next={getMovies}
         hasMore={hasMore}
-        loader={<h4 className="text-center mt-3">Cargando más películas...</h4>}
+        loader={
+          <h4 className="text-center recomendaciones  mt-3">
+            Cargando más películas...
+          </h4>
+        }
         endMessage={<p className="text-center">No hay más películas</p>}
       >
         <Container>

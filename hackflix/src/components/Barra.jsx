@@ -1,12 +1,12 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import Carousel from "react-bootstrap/Carousel";
 
 function Barra() {
   return (
     <div className="fondo">
-      <Navbar expand="lg" className="">
+      <Navbar expand="lg">
         <Container>
           <Navbar.Brand className="element" href="#home">
             Hackflix
@@ -21,10 +21,35 @@ function Barra() {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div className="titulo">
-        <h1>¡Tus películas favoritas!</h1>
-        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
-      </div>
+
+      <Carousel>
+        <Carousel.Item>
+          <img
+            src="/img/project_x.png "
+            alt="Primera imagen"
+            className="d-block w-100  fondo"
+          />
+          <Carousel.Caption className="titulo"></Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            src="/img/maze.png"
+            alt="Segunda imagen"
+            className="d-block w-100  fondo"
+          />
+          <Carousel.Caption className="titulo"></Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            src="/img/joker.jpg"
+            alt="Tercera imagen"
+            className="d-block w-100  fondo"
+          />
+          <Carousel.Caption className="titulo"></Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
     </div>
   );
 }

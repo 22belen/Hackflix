@@ -13,11 +13,10 @@ body {
 }
 
 .fondo {
-  background-image: url(/img/imagen-pelicula.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 600px;
+  height: 750px;
 }
 .element {
   font-weight: bold;
@@ -57,4 +56,10 @@ body {
 }
 .estrellas {
   color: gold;
+}
+.stars {
+  margin-top: 75px;
+}
+.recomendaciones {
+  color: white;
 }
