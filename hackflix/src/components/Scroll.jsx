@@ -45,7 +45,6 @@ function Scroll() {
   }, []);
 
   const filteredMovies = movies.filter((movie) => movie.vote_average >= rating);
-
   const handleShow = (movie) => setSelectedMovie(movie);
   const handleClose = () => setSelectedMovie(null);
 

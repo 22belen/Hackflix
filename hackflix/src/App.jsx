@@ -1,16 +1,21 @@
-import { useState } from "react";
 import "./App.css";
 import Barra from "./components/Barra";
-import { Rating } from "react-simple-star-rating";
 import Scroll from "./components/Scroll";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
-  return (
-    <>
-      <Barra />
-      <Scroll />
-    </>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <Barra />
+          <Scroll />
+        </>
+      ),
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;

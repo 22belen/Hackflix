@@ -37,11 +37,11 @@ body {
   margin-bottom: 20px;
 }
 .movie-card img {
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .movie-card img:hover {
-  transform: scale(1.08);
+  transform: scale(1.1);
 }
 .puntaje {
   color: rgb(255, 255, 255);
