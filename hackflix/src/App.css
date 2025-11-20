@@ -16,7 +16,6 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 750px;
 }
 .element {
   font-weight: bold;
@@ -62,4 +61,20 @@ body {
 }
 .recomendaciones {
   color: white;
+}
+.peli-individual {
+  color: gold;
+  margin-top: 30px;
+}
+.img-id {
+  margin-top: 30px;
+}
+
+.datos {
+  color: #fff;
+  margin-top: 30px;
+}
+.back-home {
+  margin-top: 30px;
+  margin-bottom: 100px;
 }

@@ -3,8 +3,11 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import axios from "axios";
 import { Container, Row, Col, Modal, Button } from "react-bootstrap";
 import { Rating } from "react-simple-star-rating";
+import { useNavigate } from "react-router-dom";
+import Carousel from "react-bootstrap/Carousel";
 
 function Scroll() {
+  const navigate = useNavigate();
   const [movies, setMovies] = useState([]);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
@@ -50,6 +53,34 @@ function Scroll() {
 
   return (
     <div>
+      <Carousel>
+        <Carousel.Item>
+          <img
+            src="/img/project_x.png "
+            alt="Primera imagen"
+            className="d-block w-100  fondo"
+          />
+          <Carousel.Caption className="titulo"></Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            src="/img/maze.png"
+            alt="Segunda imagen"
+            className="d-block w-100  fondo"
+          />
+          <Carousel.Caption className="titulo"></Carousel.Caption>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            src="/img/joker.jpg"
+            alt="Tercera imagen"
+            className="d-block w-100  fondo"
+          />
+          <Carousel.Caption className="titulo"></Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
       <div className="contenedor rating  text-center stars">
         <Rating onClick={handleRating} initialValue={(rating / 10) * 5} />
         <button className="btn btn-warning ms-2 p-1" onClick={handleReset}>
@@ -88,7 +119,7 @@ function Scroll() {
                 <div
                   className="movie-card mt-3"
                   style={{ cursor: "pointer" }}
-                  onClick={() => handleShow(movie)}
+                  onClick={() => navigate(`/pelicula/${movie.id}`)}
                 >
                   <img
                     src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
