@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  padding-top: 50px;
 }
 
 .titulo {
@@ -77,4 +78,7 @@ body {
 .back-home {
   margin-top: 30px;
   margin-bottom: 100px;
+}
+.navbar-black {
+  background-color: #000000;
 }

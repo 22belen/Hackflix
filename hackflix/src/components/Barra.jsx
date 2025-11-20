@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function Barra() {
   return (
     <div className="fondo">
-      <Navbar expand="lg">
+      <Navbar expand="lg" fixed="top" className="navbar-black">
         <Container>
           <Navbar.Brand className="element" href="#home">
             <Link
