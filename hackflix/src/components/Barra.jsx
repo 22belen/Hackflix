@@ -1,6 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { Link } from "react-router-dom";
 
 function Barra() {
   return (
@@ -8,13 +9,25 @@ function Barra() {
       <Navbar expand="lg">
         <Container>
           <Navbar.Brand className="element" href="#home">
-            Hackflix
+            <Link
+              to="/"
+              className="inicio"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              Hackflix
+            </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link className="element" href="#home">
-                Home
+                <Link
+                  to="/"
+                  className="inicio"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  Home
+                </Link>
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>
