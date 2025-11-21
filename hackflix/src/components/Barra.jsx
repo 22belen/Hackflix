@@ -14,7 +14,7 @@ function Barra() {
               className="inicio"
               style={{ textDecoration: "none", color: "white" }}
             >
-              Hackflix
+              HACKFLIX
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
