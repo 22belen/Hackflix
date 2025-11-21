@@ -53,34 +53,35 @@ function Scroll() {
 
   return (
     <div>
-      <Carousel>
+      <Carousel className="carrusel ">
         <Carousel.Item>
           <img
             src="/img/project_x.png "
             alt="Primera imagen"
-            className="d-block w-100  fondo"
+            className="d-block w-100 "
           />
           <Carousel.Caption className="titulo"></Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item className="carrusel">
           <img
             src="/img/maze.png"
             alt="Segunda imagen"
-            className="d-block w-100  fondo"
+            className="d-block w-100 "
           />
           <Carousel.Caption className="titulo"></Carousel.Caption>
         </Carousel.Item>
 
-        <Carousel.Item>
+        <Carousel.Item className="carrusel">
           <img
             src="/img/joker.jpg"
             alt="Tercera imagen"
-            className="d-block w-100  fondo"
+            className="d-block w-100  "
           />
           <Carousel.Caption className="titulo"></Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+
       <div className="contenedor rating  text-center stars">
         <Rating onClick={handleRating} initialValue={(rating / 10) * 5} />
         <button className="btn btn-warning ms-2 p-1" onClick={handleReset}>

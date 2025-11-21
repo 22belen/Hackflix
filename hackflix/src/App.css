@@ -13,11 +13,10 @@ body {
   margin-top: 400px;
 }
 
-.fondo {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.carrusel img {
+  height: 700px;
 }
+
 .element {
   font-weight: bold;
   color: #ffffff;
@@ -81,4 +80,7 @@ body {
 }
 .navbar-black {
   background-color: #000000;
+}
+.detalles-peli {
+  margin-top: 85px;
 }

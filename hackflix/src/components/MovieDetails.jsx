@@ -28,30 +28,37 @@ function MovieDetails() {
     <>
       {" "}
       <Barra />
-      <div className="container mt-3">
-        <h2 className="peli-individual">{movie.title}</h2>
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-          alt={movie.title}
-          className="img-fluid img-id"
-        />
-        <div className="datos">
-          <p>
-            <strong>Fecha de estreno:</strong> {movie.release_date}
-          </p>
-          <p>
-            <strong>Resumen:</strong> {movie.overview}
-          </p>
-          <p>
-            <strong>Rating:</strong> {movie.vote_average}
-          </p>
+      <div className="container  mt-3   ">
+        <div className="row">
+          <div className="col-6">
+            <h2 className="peli-individual ">{movie.title}</h2>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+              alt={movie.title}
+              className="img-fluid img-id "
+            />
+          </div>
+          <div className="col-6  detalles-peli ">
+            <div className="datos  ">
+              <p>
+                <strong>Fecha de estreno:</strong> {movie.release_date}
+              </p>
+              <p>
+                <strong>Resumen:</strong> {movie.overview}
+              </p>
+              <p>
+                <strong>Rating:</strong> {movie.vote_average}
+              </p>
+            </div>
+
+            <button
+              className="btn btn-warning mt-2 back-home "
+              onClick={() => navigate("/")}
+            >
+              Volver
+            </button>
+          </div>
         </div>
-        <button
-          className="btn btn-warning mt-2 back-home"
-          onClick={() => navigate("/")}
-        >
-          Volver
-        </button>
       </div>
     </>
   );
