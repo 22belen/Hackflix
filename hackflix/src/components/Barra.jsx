@@ -12,7 +12,7 @@ function Barra() {
             <Link
               to="/"
               className="inicio"
-              style={{ textDecoration: "none", color: "inherit" }}
+              style={{ textDecoration: "none", color: "white" }}
             >
               Hackflix
             </Link>
@@ -24,7 +24,7 @@ function Barra() {
                 <Link
                   to="/"
                   className="inicio"
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   Home
                 </Link>
